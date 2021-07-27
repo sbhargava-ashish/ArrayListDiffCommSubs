@@ -2,7 +2,24 @@ import java.util.*;
 
 public class Main {
 
+    Main(){
+        System.out.println("Constructor");
+    }
+
+    private static final int value;
+
+    static {
+        System.out.println("static block");
+        value = 2; // final can be modified here
+    }
+
+    {
+        System.out.println("Instance block");
+        System.out.println(value);
+    }
+
     public static void main(String[] args) {
+        Main main = new Main();
         findDiffAndCommonBetweenLists();
         subList();
         unique();
